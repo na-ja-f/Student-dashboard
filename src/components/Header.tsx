@@ -1,4 +1,4 @@
-
+// simple static header
 
 function Header() {
   return (

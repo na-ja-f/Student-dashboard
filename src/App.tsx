@@ -1,15 +1,9 @@
 import DashBoard from "./pages/DashBoard";
-import UpcomingClasses from "./pages/UpcomingClasses";
 
 function App() {
   return (
+    // entry point to the dashboard
     <DashBoard />
-    // <div>
-      
-    //   <div className="p-[18px]">
-    //     <UpcomingClasses />
-    //   </div>
-    // </div>
   );
 }
 

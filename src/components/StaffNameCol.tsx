@@ -1,8 +1,11 @@
+// columm for showing respective tutor names and their image
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function StaffNameCol({ item }: any) {
   return (
     <div className="flex gap-[14px] items-center">
+      {/* shadcn avatar component */}
       <Avatar>
         <AvatarImage src={item.image} />
         <AvatarFallback>{item.name.slice(0, 2)}</AvatarFallback>

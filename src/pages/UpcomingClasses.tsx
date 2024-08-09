@@ -1,3 +1,4 @@
+// classes listing component
 import ClassList from "@/components/ClassList";
 import { classData } from "@/data/classes";
 import { useEffect, useState } from "react";
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/pagination";
 
 function UpcomingClasses() {
+  // state for storing the Class Data & toggler for filtering
   const [classes, setClasses] = useState(classData);
   const [isFiltered, setIsFiltered] = useState(false);
 
@@ -23,6 +25,7 @@ function UpcomingClasses() {
   // Calculate total pages
   const totalPages = Math.ceil(classes.length / classesPerPage);
 
+  // filter data based on the change in isFiltered state
   useEffect(() => {
     if (isFiltered) {
       const filteredClasses = classData.filter(
@@ -41,6 +44,8 @@ function UpcomingClasses() {
   const indexOfFirstClass = indexOfLastClass - classesPerPage;
   const currentClasses = classes.slice(indexOfFirstClass, indexOfLastClass);
 
+  // Callback function for changing the isBooked part of an item to a timer
+  // this function is passed to change Book now Button to Timer
   const handleBookingToggle = (id: number) => {
     setClasses((prevClasses) =>
       prevClasses.map((cls) =>
@@ -49,17 +54,24 @@ function UpcomingClasses() {
     );
   };
 
+  // function set the current page
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
   return (
     <div className="w-[606px] ml-7 rounded-lg bg-white p-[18px]">
+
+      {/* header on top of classes table including booked only filter */}
       <ClassListHeader isFiltered={isFiltered} setIsFiltered={setIsFiltered} />
+
+      {/* classes table */}
       <ClassList
         classes={currentClasses}
         onBookingToggle={handleBookingToggle}
       />
+
+      {/* shadcn code for pagination */}
       <Pagination>
         <PaginationContent>
           <PaginationItem>

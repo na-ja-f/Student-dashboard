@@ -1,3 +1,5 @@
+// columm for showing actions like join, booking annd timer
+
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import CountDownTimer from "./CountDownTimer";
@@ -18,6 +20,8 @@ function ActionsCol({
   item: any;
   onBookingToggle: (id: number) => void;
 }) {
+
+  // function to handle the book now button and change the button to a timer
   const handleConfirmClick = () => {
     onBookingToggle(item.id);
   };
@@ -25,6 +29,7 @@ function ActionsCol({
   return (
     <div className="items-center">
       {item.isLive && (
+        // shadcn Buttom component
         <Button variant="secondary">
           <>
             {"Join now"}
@@ -33,6 +38,7 @@ function ActionsCol({
         </Button>
       )}
       {!item.isLive && !item.isBooked && (
+        // modal by shadcn for confirming booking
         <Dialog>
           <DialogTrigger asChild>
             <Button>Book now</Button>
@@ -53,6 +59,7 @@ function ActionsCol({
           </DialogContent>
         </Dialog>
       )}
+      {/* count down timer */}
       {!item.isLive && item.isBooked && <CountDownTimer />}
     </div>
   );

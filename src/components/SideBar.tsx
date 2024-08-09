@@ -1,3 +1,4 @@
+// simple static side bar
 import {
   LayoutDashboard,
   Users,

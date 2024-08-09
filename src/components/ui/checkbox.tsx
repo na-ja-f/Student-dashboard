@@ -1,8 +1,10 @@
-import * as React from "react"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { Check } from "lucide-react"
+// shadcn checkbox component
 
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { Check } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -17,12 +19,14 @@ const Checkbox = React.forwardRef<
     {...props}
   >
     <CheckboxPrimitive.Indicator
-      className={cn("flex items-center justify-center text-current bg-[#2080F6]")}
+      className={cn(
+        "flex items-center justify-center text-current bg-[#2080F6]"
+      )}
     >
       <Check strokeWidth={3} className="h-4 w-4 rounded-lg" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
-))
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export { Checkbox }
+export { Checkbox };

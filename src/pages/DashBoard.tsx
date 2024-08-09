@@ -11,6 +11,7 @@ function DashBoard() {
         <Header />
         <div className="flex">
         <UpcomingClasses />
+        {/* side static box to view assignments */}
         <AssignmentsBox />
         </div>
       </div>

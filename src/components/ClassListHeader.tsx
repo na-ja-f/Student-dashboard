@@ -1,3 +1,4 @@
+// header on top of classes table including booked only filter
 import { Checkbox } from "@/components/ui/checkbox";
 
 interface ClassListHeaderProps {
@@ -6,6 +7,7 @@ interface ClassListHeaderProps {
 }
 
 function ClassListHeader({ isFiltered, setIsFiltered }: ClassListHeaderProps) {
+  // function to toggle between filtered and unfiltered
   const handleCheckboxChange = () => {
     setIsFiltered(!isFiltered);
   };
@@ -18,6 +20,7 @@ function ClassListHeader({ isFiltered, setIsFiltered }: ClassListHeaderProps) {
       </div>
       <div className="flex flex-row items-center gap-[10px]">
         <p className="font-medium text-base text-[#313336]">Booked only</p>
+        {/* shadcn checkbox */}
         <Checkbox onClick={handleCheckboxChange} />
       </div>
     </div>

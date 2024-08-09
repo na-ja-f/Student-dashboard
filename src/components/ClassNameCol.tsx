@@ -1,3 +1,4 @@
+// columm for showing upcoming class name and date
 
 function ClassNameCol({ item,index }: any) {
   return (

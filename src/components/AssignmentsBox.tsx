@@ -1,3 +1,4 @@
+// side static box to view assignments
 
 function AssignmentsBox() {
   return (
